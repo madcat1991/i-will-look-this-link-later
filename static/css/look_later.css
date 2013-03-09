@@ -56,6 +56,14 @@ hr.bottom{
 #add_button{
     display: block;
     margin: 10px auto;
+    border: 1px solid #777777;
+    background: #6e9e2d;
+    color: white;
+    font: bold 24px 'Trebuchet MS';
+    padding: 4px;
+    cursor: pointer;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
 }
 
 input:focus {
