@@ -2,7 +2,8 @@
     vertical-align: bottom;
     display: block;
     margin: auto;
-    z-index: 10;
+    position: relative;
+    top: -115px;
 }
 
 body.bottom{
@@ -11,4 +12,52 @@ body.bottom{
 
 hr.bottom{
     margin-top: 0px;
+    position: relative;
+    top: -115px;
+}
+
+.text_container{
+    text-align: center;
+    font-family: 'Dancing Script', Georgia, Times, serif;
+    font-size: 24px;
+    position: relative;
+    z-index: 2;
+}
+
+#pass_container{
+    top: 250px;
+    z-index: 2;
+}
+
+#url, #pass{
+    height: 26px;
+    font-size: 24px;
+    font-family: 'Dancing Script', Georgia, Times, serif;
+
+    padding: 7px;
+    border: 5px solid #515151;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+}
+
+#header{
+    text-align: center;
+    font-family: 'Dancing Script', Georgia, Times, serif;
+    font-size: 80px;
+    margin-bottom: 30px;
+}
+
+.url-label, .pass-label{
+    position: absolute;
+    margin: 9px 9px 9px 12px;
+}
+
+#add_button{
+    display: block;
+    margin: 10px auto;
+}
+
+input:focus {
+    outline: none;
 }
