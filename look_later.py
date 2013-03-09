@@ -13,7 +13,6 @@ def connect_db():
 @look_later.before_request
 def before_request():
     """Make sure we are connected to the database each request."""
-    print "HERE"
     g.db = connect_db()
 
 

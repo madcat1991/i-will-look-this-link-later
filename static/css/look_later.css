@@ -1,0 +1,14 @@
+#tube {
+    vertical-align: bottom;
+    display: block;
+    margin: auto;
+    z-index: 10;
+}
+
+body.bottom{
+    margin-bottom: 0px;
+}
+
+hr.bottom{
+    margin-top: 0px;
+}
