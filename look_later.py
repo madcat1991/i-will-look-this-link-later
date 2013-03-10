@@ -37,9 +37,15 @@ def push_url():
         if url and password:
             if password == current_app.config['PUSH_PASSWORD']:
                 if simple_url_checker(url):
-                    sql = "INSERT INTO look_later_url(url) VALUES(?)"
-                    g.db.execute(sql, (url,))
-                    g.db.commit()
+                    #check for duplicates
+                    sql = "SELECT * FROM look_later_url WHERE url=? AND watched=0"
+                    cur = g.db.execute(sql, (url,))
+                    if len(cur.fetchall()) == 0:
+                        #insert url
+                        sql = "INSERT INTO look_later_url(url) VALUES(?)"
+                        g.db.execute(sql, (url,))
+                        g.db.commit()
+
                     return jsonify(success="ok")
                 else:
                     return jsonify(success="error", message="Incorrect url string")
