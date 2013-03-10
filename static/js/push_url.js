@@ -13,6 +13,7 @@ function unforgettable_animation(finish_text){
                         $(this).css({"transform": "rotate("+now+"deg)"});
                     },
                     complete: function() {
+                        this.rotation = 0;
                         //pass disappear
                         $('#pass_container').animate(
                             {
