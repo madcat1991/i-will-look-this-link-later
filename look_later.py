@@ -57,3 +57,21 @@ def push_url():
             else:
                 return jsonify(success="error", message="Wrong push password")
     return jsonify(success="error", message="Wrong push params")
+
+
+@look_later.route('/pop', methods=['POST'])
+def pop_url():
+    if request.method == 'POST':
+        sql = "SELECT * FROM look_later_url WHERE watched=0 ORDER BY date LIMIT 1"
+        cur = g.db.execute(sql)
+        row = cur.fetchone()
+        if row:
+            url_id, url = row[0], row[1]
+            sql = "UPDATE look_later_url SET watched=1 WHERE id=?"
+            g.db.execute(sql, (url_id,))
+            g.db.commit()
+
+            return jsonify(success="ok", message=url)
+        else:
+            return jsonify(success="stop", message="No more unwatched links")
+    return jsonify(success="error", message="Unknown request")

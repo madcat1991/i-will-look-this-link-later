@@ -1,4 +1,4 @@
-#tube {
+#tube_bottom {
     vertical-align: bottom;
     display: block;
     margin: auto;
@@ -6,8 +6,18 @@
     top: -115px;
 }
 
+#tube_top {
+    vertical-align: top;
+    display: block;
+    margin: 0 auto 60px auto;
+}
+
 body.bottom{
     margin-bottom: 0px;
+}
+
+body.top{
+    margin-top: 0px;
 }
 
 hr.bottom{
@@ -57,7 +67,7 @@ hr.bottom{
     margin: 9px 9px 9px 12px;
 }
 
-#add_button{
+.green_button{
     display: block;
     margin: 10px auto;
     border: 1px solid #777777;
@@ -72,4 +82,17 @@ hr.bottom{
 
 input:focus {
     outline: none;
+}
+
+#data_container{
+    text-align: center;
+    width: 100px;
+    text-overflow: ellipsis;
+    position: relative;
+    top: -300px;
+    margin: auto;
+    opacity: 0;
+    font: 2px 'Dancing Script';
+    overflow: hidden;
+    white-space: nowrap;
 }
