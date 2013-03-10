@@ -24,8 +24,13 @@ def after_request(response):
 
 
 @look_later.route('/')
-def main_page():
-    return render_template('main_page.html')
+def push_url_page():
+    return render_template('push_url_page.html')
+
+
+@look_later.route('/pop_url')
+def pop_url_page():
+    return render_template('pop_url_page.html')
 
 
 @look_later.route('/push', methods=['POST'])
