@@ -3,6 +3,12 @@ $(document).ready(function(){
 
     $("#pop_button").click(function(event){
         // back to origin
+        $('#data_container').css({
+            "opacity": "0",
+            "width": "100px",
+            "top": "-300px",
+            "font-size": "2px"
+        });
 
         // abort any pending request
         if (request) {
